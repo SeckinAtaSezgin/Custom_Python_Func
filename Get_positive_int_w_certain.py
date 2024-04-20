@@ -1,7 +1,7 @@
 def get_p_integer():
     class NotPositiveError(UserWarning):
         pass
-    class WrongError(UserWarning):
+    class Wrong_Input_Error(UserWarning):
         pass
     class UncertaintyError(UserWarning):
         pass
@@ -16,11 +16,11 @@ def get_p_integer():
                     try:
                         q == "yes"
                         if q != "no" and q != "yes":
-                            raise WrongError
+                            raise Wrong_Input_Error
                         elif q == "no":
                             raise UncertaintyError
                         break
-                    except WrongError:
+                    except Wrong_Input_Error:
                         print("Just yes or no")
             return(number)
             break
@@ -30,6 +30,3 @@ def get_p_integer():
             print("The number was not positive, please try again.")
         except UncertaintyError:
             print("Try another number")
-
-
-print(get_p_integer())
