@@ -23,7 +23,6 @@ def get_p_integer():
                     except Wrong_Input_Error:
                         print("Just yes or no")
             return(number)
-            break
         except ValueError:
             print("This was not a number, please try again.")
         except NotPositiveError:
